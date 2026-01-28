@@ -7,9 +7,6 @@ spring:
       schema-locations: classpath:schema.sql
       data-locations: classpath:data.sql
   datasource:
-    url: ${url}
-    username: ${username}
-    password: ${password}
     driver-class-name: org.h2.Driver
   jpa:
     database-platform: ${database-platform}
