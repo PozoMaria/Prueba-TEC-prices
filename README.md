@@ -10,6 +10,7 @@ This project provides a backend structure for handling product pricing, includin
 - Spring Boot 3.x
 - JUnit 5 for testing
 - Lombok
+- Swagger
 
 ## Features
 - Spring Boot application bootstrap
