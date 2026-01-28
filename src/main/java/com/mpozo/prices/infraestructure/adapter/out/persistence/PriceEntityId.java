@@ -8,6 +8,9 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * The type Price entity id.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

@@ -3,10 +3,16 @@ package com.mpozo.prices.application.port.out.persistence;
 import com.mpozo.prices.domain.model.Price;
 import com.mpozo.prices.infraestructure.adapter.out.persistence.PriceEntity;
 
+/**
+ * The type Price mapper.
+ */
 public class PriceMapper {
 
     /**
      * Convierte de PriceEntity (DB) a Price (dominio)
+     *
+     * @param entity the entity
+     * @return the price
      */
     public static Price toDomain(PriceEntity entity) {
         return new Price(
@@ -22,6 +28,9 @@ public class PriceMapper {
 
     /**
      * Opcional: convierte de Price (dominio) a PriceEntity
+     *
+     * @param price the price
+     * @return the price entity
      */
     public static PriceEntity toEntity(Price price) {
         PriceEntity entity = new PriceEntity();

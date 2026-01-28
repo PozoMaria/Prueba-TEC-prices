@@ -18,16 +18,32 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 
+/**
+ * The type Price controller.
+ */
 @RestController
 @RequestMapping("/prices")
 public class PriceController {
 
     private final PriceUseCase priceUseCase;
 
+    /**
+     * Instantiates a new Price controller.
+     *
+     * @param priceUseCase the price use case
+     */
     public PriceController(PriceUseCase priceUseCase) {
         this.priceUseCase = priceUseCase;
     }
 
+    /**
+     * Gets price.
+     *
+     * @param brandId         the brand id
+     * @param productId       the product id
+     * @param applicationDate the application date
+     * @return the price
+     */
     @Operation(
             summary = "Get the applicable price for a product and brand at a specific date and time",
             description = "Returns the price that would apply for a product under a brand at a given moment. " +

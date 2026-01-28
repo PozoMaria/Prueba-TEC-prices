@@ -9,11 +9,19 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 
+/**
+ * The type Price service.
+ */
 @Service
 public class PriceService implements PriceUseCase {
 
     private final LoadPricePort loadPricePort;
 
+    /**
+     * Instantiates a new Price service.
+     *
+     * @param loadPricePort the load price port
+     */
     public PriceService(LoadPricePort loadPricePort) {
         this.loadPricePort = loadPricePort;
     }

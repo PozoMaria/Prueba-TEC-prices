@@ -8,11 +8,19 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * The type Price persistence adapter.
+ */
 @Component
 public class PricePersistenceAdapter implements LoadPricePort {
 
     private final PriceEntityRepository repository;
 
+    /**
+     * Instantiates a new Price persistence adapter.
+     *
+     * @param repository the repository
+     */
     public PricePersistenceAdapter(PriceEntityRepository repository) {
         this.repository = repository;
     }
