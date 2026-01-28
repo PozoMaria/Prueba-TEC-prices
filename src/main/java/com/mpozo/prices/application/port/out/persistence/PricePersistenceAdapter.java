@@ -5,7 +5,6 @@ import com.mpozo.prices.domain.model.Price;
 import com.mpozo.prices.infraestructure.adapter.out.persistence.PriceEntityRepository;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 

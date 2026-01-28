@@ -6,7 +6,6 @@ import com.mpozo.prices.application.dto.PriceResponse;
 import com.mpozo.prices.domain.model.Price;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 

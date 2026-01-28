@@ -2,7 +2,6 @@ package com.mpozo.prices.application.port.out;
 
 import com.mpozo.prices.domain.model.Price;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
