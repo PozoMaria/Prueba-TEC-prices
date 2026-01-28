@@ -9,6 +9,7 @@ This project provides a backend structure for handling product pricing, includin
 - Maven
 - Spring Boot 3.x
 - JUnit 5 for testing
+- Lombok
 
 ## Features
 - Spring Boot application bootstrap
