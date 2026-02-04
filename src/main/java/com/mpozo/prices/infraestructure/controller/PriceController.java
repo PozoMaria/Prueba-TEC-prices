@@ -1,7 +1,7 @@
-package com.mpozo.prices.infraestructure.adapter.in.web;
+package com.mpozo.prices.infraestructure.controller;
 
-import com.mpozo.prices.application.dto.PriceResponse;
-import com.mpozo.prices.application.port.in.PriceUseCase;
+import com.mpozo.prices.application.service.PriceService;
+import com.mpozo.prices.infraestructure.dto.PriceResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.enums.ParameterIn;
@@ -25,15 +25,15 @@ import java.time.LocalDateTime;
 @RequestMapping("/prices")
 public class PriceController {
 
-    private final PriceUseCase priceUseCase;
+    private final PriceService priceService;
 
     /**
      * Instantiates a new Price controller.
      *
-     * @param priceUseCase the price use case
+     * @param priceService the price use case
      */
-    public PriceController(PriceUseCase priceUseCase) {
-        this.priceUseCase = priceUseCase;
+    public PriceController(PriceService priceService) {
+        this.priceService = priceService;
     }
 
     /**
@@ -85,7 +85,7 @@ public class PriceController {
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime applicationDate
     ) {
         try {
-            PriceResponse response = priceUseCase.getPrice(brandId, productId, applicationDate);
+            PriceResponse response = priceService.getPrice(brandId, productId, applicationDate);
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
             if ("No price found".equals(e.getMessage())) {

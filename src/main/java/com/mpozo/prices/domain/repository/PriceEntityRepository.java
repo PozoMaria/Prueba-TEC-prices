@@ -1,12 +1,11 @@
-package com.mpozo.prices.infraestructure.adapter.out.persistence;
+package com.mpozo.prices.domain.repository;
 
+import com.mpozo.prices.domain.entity.PriceEntity;
+import com.mpozo.prices.domain.entity.PriceEntityId;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 
 /**

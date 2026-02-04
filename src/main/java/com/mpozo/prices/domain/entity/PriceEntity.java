@@ -1,4 +1,4 @@
-package com.mpozo.prices.infraestructure.adapter.out.persistence;
+package com.mpozo.prices.domain.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

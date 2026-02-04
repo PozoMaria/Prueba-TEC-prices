@@ -1,7 +1,7 @@
-package com.mpozo.prices.infraestructure.adapter.in.web;
+package com.mpozo.prices.infraestructure.controller;
 
-import com.mpozo.prices.application.dto.PriceResponse;
-import com.mpozo.prices.application.port.in.PriceUseCase;
+import com.mpozo.prices.application.service.PriceService;
+import com.mpozo.prices.infraestructure.dto.PriceResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -26,7 +26,7 @@ class PriceControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private PriceUseCase priceUseCase;
+    private PriceService priceService;
 
     private PriceResponse priceResponse;
 
@@ -46,7 +46,7 @@ class PriceControllerTest {
     @Test
     void getPrice_ReturnsPriceResponse() throws Exception {
         // Mock useCase
-        Mockito.when(priceUseCase.getPrice(
+        Mockito.when(priceService.getPrice(
                 eq(1L),
                 eq(35455L),
                 any(LocalDateTime.class)
@@ -71,7 +71,7 @@ class PriceControllerTest {
     @Test
     void getPrice_UseCaseThrowsException_Returns204() throws Exception {
         // Simula que el UseCase no encuentra precio
-        Mockito.when(priceUseCase.getPrice(any(), any(), any()))
+        Mockito.when(priceService.getPrice(any(), any(), any()))
                 .thenThrow(new RuntimeException("No price found"));
 
         mockMvc.perform(get("/prices/getPrice")

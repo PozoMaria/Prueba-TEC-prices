@@ -1,11 +1,13 @@
-package com.mpozo.prices.application.port.out.persistence;
+package com.mpozo.prices.domain.mapper;
 
+import com.mpozo.prices.domain.entity.PriceEntity;
 import com.mpozo.prices.domain.model.Price;
-import com.mpozo.prices.infraestructure.adapter.out.persistence.PriceEntity;
+import org.springframework.stereotype.Component;
 
 /**
  * The type Price mapper.
  */
+@Component
 public class PriceMapper {
 
     /**
@@ -14,7 +16,7 @@ public class PriceMapper {
      * @param entity the entity
      * @return the price
      */
-    public static Price toDomain(PriceEntity entity) {
+    public Price toDomain(PriceEntity entity) {
         return new Price(
                 entity.getProductId().intValue(),
                 entity.getBrandId().intValue(),
@@ -32,7 +34,7 @@ public class PriceMapper {
      * @param price the price
      * @return the price entity
      */
-    public static PriceEntity toEntity(Price price) {
+    public PriceEntity toEntity(Price price) {
         PriceEntity entity = new PriceEntity();
         entity.setProductId(price.getProductId().intValue());
         entity.setBrandId(price.getBrandId().intValue());

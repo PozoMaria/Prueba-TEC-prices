@@ -1,4 +1,4 @@
-package com.mpozo.prices.infraestructure.adapter.out.persistence;
+package com.mpozo.prices.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 /**
  * The type Price entity id.
