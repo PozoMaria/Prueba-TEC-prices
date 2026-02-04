@@ -72,7 +72,7 @@ public class PriceController {
                     content = @Content
             )
     })
-    @GetMapping("/getPrice")
+    @GetMapping()
     public ResponseEntity<PriceResponse> getPrice(
             @Parameter(description = "Brand ID", required = true, in = ParameterIn.QUERY)
             @RequestParam("brandId") Long brandId,

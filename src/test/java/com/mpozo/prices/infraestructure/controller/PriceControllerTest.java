@@ -53,7 +53,7 @@ class PriceControllerTest {
         )).thenReturn(priceResponse);
 
         // call endpoint and verify response
-        mockMvc.perform(get("/prices/getPrice")
+        mockMvc.perform(get("/prices")
                         .param("brandId", "1")
                         .param("productId", "35455")
                         .param("applicationDate", "2020-06-14T16:00:00")
@@ -69,12 +69,12 @@ class PriceControllerTest {
     }
 
     @Test
-    void getPrice_UseCaseThrowsException_Returns204() throws Exception {
+    void getPrice_ThrowsException_Returns204() throws Exception {
         // Simula que el UseCase no encuentra precio
         Mockito.when(priceService.getPrice(any(), any(), any()))
                 .thenThrow(new RuntimeException("No price found"));
 
-        mockMvc.perform(get("/prices/getPrice")
+        mockMvc.perform(get("/prices")
                         .param("brandId", "1")
                         .param("productId", "35455")
                         .param("applicationDate", "2020-06-14T16:00:00")
