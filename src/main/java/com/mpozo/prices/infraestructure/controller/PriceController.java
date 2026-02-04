@@ -57,7 +57,7 @@ public class PriceController {
                             schema = @Schema(implementation = PriceResponse.class))
             ),
             @ApiResponse(
-                    responseCode = "204",
+                    responseCode = "404",
                     description = "No applicable price found",
                     content = @Content
             ),
@@ -84,14 +84,7 @@ public class PriceController {
             @RequestParam("applicationDate")
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime applicationDate
     ) {
-        try {
-            PriceResponse response = priceService.getPrice(brandId, productId, applicationDate);
-            return ResponseEntity.ok(response);
-        } catch (RuntimeException e) {
-            if ("No price found".equals(e.getMessage())) {
-                return ResponseEntity.noContent().build(); // 204 No Content
-            }
-            throw e; // other exceptions
-        }
+        PriceResponse response = priceService.getPrice(brandId, productId, applicationDate);
+        return ResponseEntity.ok(response);
     }
 }

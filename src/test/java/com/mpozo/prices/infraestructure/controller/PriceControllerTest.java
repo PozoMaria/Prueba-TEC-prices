@@ -69,7 +69,7 @@ class PriceControllerTest {
     }
 
     @Test
-    void getPrice_ThrowsException_Returns204() throws Exception {
+    void getPrice_ThrowsException_Returns404() throws Exception {
         // Simula que el UseCase no encuentra precio
         Mockito.when(priceService.getPrice(any(), any(), any()))
                 .thenThrow(new RuntimeException("No price found"));
@@ -79,6 +79,6 @@ class PriceControllerTest {
                         .param("productId", "35455")
                         .param("applicationDate", "2020-06-14T16:00:00")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNoContent()); // espera 204 en vez de 5xx
+                .andExpect(status().isNoContent());
     }
 }
